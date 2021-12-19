@@ -1,0 +1,28 @@
+{
+  "name": "talktactoe",
+  "version": "1.0.0",
+  "description": "Message &amp; Video Call",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/githubuserPookie/TalkTacToe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/githubuserPookie/TalkTacToe/issues"
+  },
+  "homepage": "https://github.com/githubuserPookie/TalkTacToe#readme",
+  "dependencies": {
+    "create-react-app": "^5.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
