@@ -7,15 +7,26 @@ class Nav extends Component {
         super();
     }
     render(){
+        const showContainerLogin = () => {
+            document.getElementById(`container-login`).style.display = 'block';
+            document.getElementById(`container-login`).style.opacity = 0.5;
+            document.getElementById(`formAuth-login`).style.display = 'block';
+        }
+        const showContainerRegister = () => {
+            document.getElementById(`container-register`).style.display = 'block';
+            document.getElementById(`container-register`).style.opacity = 0.5;
+            document.getElementById(`formAuth-register`).style.display = 'block';
+        }
         const logout = async() => {
-            console.log("clicked");
+            await fetch("/api/auth/logout");
+            window.location.reload();
         }
         if(this.props.loggedIn === "true"){
             return(
                 <div>   
                     <img className="logo" src="logo.png" alt="logo" />
                     <ul className="nav-ul">
-                        <li><Link to="/" onClick={logout}>logout</Link></li>
+                        <li><h1 onClick={logout}>logout</h1></li>
                     </ul>
                 </div>
             )
@@ -25,8 +36,8 @@ class Nav extends Component {
             <div>
                 <img className="logo" src="logo.png" alt="logo" />
                 <ul className="nav-ul">
-                    <li><Link to="/auth/login">Login</Link></li>
-                    <li><Link to="/auth/register" id="register">Register</Link></li>
+                    <li><h1 onClick={showContainerLogin}>Login</h1></li>
+                    <li><h1 id="register" onClick={showContainerRegister}>Register</h1></li>
                 </ul>
             </div>
             

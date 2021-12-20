@@ -1,6 +1,8 @@
 //import the packages we need
 const express = require("express");
+const expressSession = require("express-session")
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 //create server
 const app = express();
@@ -21,6 +23,14 @@ const connectToDb = async() => {
     }
 }
 connectToDb();
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(expressSession({
+    secret: "secret-key",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(express.json());
 
 app.use("/api/addFriend", addFriendRouter);
 app.use("/api/auth", authRouter);

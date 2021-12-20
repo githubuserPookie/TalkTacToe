@@ -11,15 +11,17 @@
     float: left;
 }
 
-.nav-ul li a {
+.nav-ul li h1 {
+    cursor: pointer;
     font-size: 50px;
     text-decoration: none;
     color: white;
     display: block;
     padding: 8px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.nav-ul li a:hover {
+.nav-ul li h1:hover {
     background-color: rgb(226, 226, 226);
 }
 
