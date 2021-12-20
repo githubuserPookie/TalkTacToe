@@ -20,6 +20,7 @@
   "dependencies": {
     "create-react-app": "^5.0.0",
     "express": "^4.17.2",
+    "express-session": "^1.17.2",
     "mongoose": "^6.1.2"
   },
   "devDependencies": {
