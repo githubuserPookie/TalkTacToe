@@ -13,8 +13,8 @@ class Login extends Component {
         }
         const login = async(e) => {
             e.preventDefault();
-            const usernameInput = document.getElementById("username").value;
-            const passwordInput = document.getElementById("password").value;
+            const usernameInput = document.getElementById("username-login").value;
+            const passwordInput = document.getElementById("password-login").value;
             const fetchData = await fetch("/api/auth/login", {
                 method: 'POST',
                 headers: {
@@ -38,8 +38,8 @@ class Login extends Component {
                 <div id="container-login"></div>
                 <form id="formAuth-login" onSubmit={login} autoComplete='off'>
                     <label>Login</label><br/>
-                    <input type="search" placeholder="username" className="authInput" id="username"></input><br/>
-                    <input placeholder='password' className="authInput" id="password" type="password"></input><br/>
+                    <input type="search" placeholder="username" className="authInput" id="username-login"></input><br/>
+                    <input placeholder='password' className="authInput" id="password-login" type="password"></input><br/>
                     <input type="submit" id='login-submit' value='Login'></input>
                     <h1 id="exit-login" onClick={exitLogin}>X</h1>
                 </form>

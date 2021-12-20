@@ -16,26 +16,35 @@ const checkLogin = (req, res) => {
     }
 };
 
-const register = (req, res) => {
-    const usernameInput = req.params.username;
-    const passwordInput = req.params.password;
-    User.find({username: usernameInput}, async(err, data) => {
-        if(data[0]){
-            const returnedData = data[0];
-            const passwordDB = returnedData.password;
-            const passwordMatch = await bcrypt.compare(passwordInput, passwordDB);
-            if(!passwordMatch){
-                res.json({result: "password does not match"})
-            }
-            else {
-                res.json({result: "logged in"});
-                req.session.username = usernameInput;
-            }
-        }
-        else {
-            res.json({result: "username not found"})
-        }
-    })
+const register = async(req, res) => {
+    const usernameInput = req.body.username;
+    const passwordInput = req.body.password;
+    console.log(passwordInput + usernameInput)
+    //check to see if username and password are valid
+    if(!usernameInput || typeof usernameInput !== "string"){
+        res.json({result: "Invalid Username"});
+        return;
+    }
+    if(!passwordInput || typeof passwordInput !== "string"){
+        res.json({result: "Invalid Password"});
+        return;
+    }
+    
+    //hash password
+    passwordInputHashed = await bcrypt.hash(passwordInput, 10)
+
+    //create new user
+    const createdUser = new User({
+        username: usernameInput, 
+        password: passwordInputHashed});
+    try{
+        await createdUser.save();
+        req.session.username = usernameInput
+        res.json({result: "logged in"})
+    }
+    catch(err){
+        res.json({result: "db err"})
+    }
 }
 
 const login = (req, res) => {

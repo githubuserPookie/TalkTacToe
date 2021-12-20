@@ -8,8 +8,9 @@ class Register extends Component {
     render(){
         const register = async(e) => {
             e.preventDefault();
-            const usernameInput = document.getElementById("username").value;
-            const passwordInput = document.getElementById("password").value;
+            const usernameInput = document.getElementById("username-register").value;
+            const passwordInput = document.getElementById("password-register").value;
+
             const fetchData = await fetch("/api/auth/register", {
                 method: 'POST',
                 headers: {
@@ -36,10 +37,10 @@ class Register extends Component {
         return(
             <div>
                 <div id="container-register"></div>
-                <form id="formAuth-register" autoComplete='off'>
+                <form id="formAuth-register" autoComplete='off' onSubmit={register}>
                     <label>Register</label><br/>
-                    <input type="search" placeholder="username" className="authInput"></input><br/>
-                    <input type="search" placeholder='password' className="authInput" type="password"></input><br/>
+                    <input type="search" placeholder="username" className="authInput" id="username-register"></input><br/>
+                    <input type="search" placeholder='password' className="authInput" type="password" id="password-register"></input><br/>
                     <input type="submit" id='register-submit' value='Register'></input>
                     <h1 id="exit-register" onClick={exitRegister}>X</h1>
                 </form>
