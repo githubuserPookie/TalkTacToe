@@ -10,7 +10,7 @@ class Nav extends Component {
         const showContainerLogin = () => {
             document.getElementById(`container-login`).style.display = 'block';
             document.getElementById(`container-login`).style.opacity = 0.5;
-            document.getElementById(`formAuth-login`).style.display = 'block';
+            document.getElementById(`formAuth-login`).style.display = 'block'; 
         }
         const showContainerRegister = () => {
             document.getElementById(`container-register`).style.display = 'block';
