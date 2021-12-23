@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import { BrowserRouter as Router, Route ,Link, Routes} from "react-router-dom";
 import './App.css';
-import Home from './Home/Home';
-import Login from './Nav/Login/Login';
-import Register from './Nav/Register/Register';
-import Chat from './Chat/Chat';
+import Home from './components/Home/Home';
+import Login from './components/Nav/Login/Login';
+import Register from './components/Nav/Register/Register';
+import Chat from './components/Chat/Chat';
 
 class App extends Component {
   constructor(){
