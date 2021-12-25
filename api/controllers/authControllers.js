@@ -5,7 +5,22 @@ const bcrypt = require("bcrypt");
 const checkLogin = (req, res) => {  
     try{
         if(req.session.username !== undefined){
-            res.json({loggedIn: "true"});
+            User.find({username: req.session.username}, async(err, data) => {
+                if(err){
+                    res.json({loggedIn: "false"});
+                }
+                else {
+                   res.json({
+                       loggedIn: "true", 
+                       username: req.session.username, 
+                       invites: data[0].invites, 
+                       friends: data[0].friends,
+                       groupChats: data[0].groupChats
+                    }); 
+                }
+                
+            })
+            
         }  
         else{
             res.json({loggedIn: "false"});

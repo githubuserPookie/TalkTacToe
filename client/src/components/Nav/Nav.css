@@ -7,7 +7,7 @@
 }
 
 .nav-ul li {
-    padding: 20px;
+    padding: 10px;
     float: left;
 }
 
@@ -44,4 +44,16 @@
         right: 5vw;
         min-width: 55px;
     }
+}
+
+.nav-ul img {
+    width: 60px;
+    padding: 8px;
+    display: block;
+    cursor: pointer;
+    margin: 33px 0;
+}
+
+.nav-ul img:hover {
+    background-color: white;
 }

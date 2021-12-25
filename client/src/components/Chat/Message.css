@@ -6,6 +6,8 @@
     border-radius: 12px;
     margin-left: 40px;
     margin-top: 5px;
+    word-break: break-word;
+    /* margin-right: 29vw; */
 }
 .message-other {
     font-size: 20px;
@@ -17,6 +19,9 @@
     margin-right: 40px;
     width: fit-content;
     margin-left: auto;
+    word-break: break-word;
+    /* margin-left: 29vw;
+    float: right; */
 }
 
 .username-me {
@@ -24,6 +29,7 @@
     font-size: 30px;
     margin-left: 20px;
     margin-bottom: 7px;
+    float: left;
 }
 
 .username-other {

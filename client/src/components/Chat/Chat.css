@@ -1,4 +1,4 @@
-#msg-container {
+.msg-container {
     overflow-y: scroll;
     position: absolute;
     top: 55%;
@@ -8,13 +8,21 @@
     /* background-image: linear-gradient(110deg, #f93d66, #6d47d9); */
     width: 80vw;
     height: 80vh;
+    word-break: break-all;
+    overflow-x: hidden;
+    scroll-behavior: auto;
 }
-#msg-container::-webkit-scrollbar {
+.msg-container::-webkit-scrollbar {
     display: none;
 }
-body {
-    /* background-image: linear-gradient(110deg,#6d47d9 , #f93d66); */
+.react-scroll-to-bottom::-webkit-scrollbar {
+    display: none;
 }
+.react-scroll-to-bottom {
+    overflow-x: hidden;
+    /* background-color: red; */
+}
+
 #background-blur {
     position: absolute;
     top: 0;
@@ -59,14 +67,17 @@ body {
     overflow-y: visible;
 }
 #enter-msg-form {
-    position: absolute;
+    z-index: 1;
+    margin: 0 auto;
     display: flex;
     width: 80vw;
-    bottom: 0;
 }
 #enter-msg-form input {
     font-size: 30px;
 }
 #enter-msg-form-submit-input {
     cursor: pointer;
+}
+#container-form {
+    position: relative;
 }

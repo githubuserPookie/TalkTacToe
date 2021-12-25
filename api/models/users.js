@@ -16,12 +16,12 @@ const userSchema = new Schema({
         require: true
     },
     requests: {
-        type: Array
+        type: Array,
     },
     invites: {
         type: Array
     },
-    groopChats: {
+    groupChats: {
         type: Array     
     },
     privateChats: {

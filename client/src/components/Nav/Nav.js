@@ -12,6 +12,9 @@ class Nav extends Component {
             document.getElementById(`container-login`).style.opacity = 0.5;
             document.getElementById(`formAuth-login`).style.display = 'block'; 
         }
+        const showContainerNotifications = () => {
+            document.getElementById("container-notifications").style.display = "block";
+        }
         const showContainerRegister = () => {
             document.getElementById(`container-register`).style.display = 'block';
             document.getElementById(`container-register`).style.opacity = 0.5;
@@ -21,12 +24,20 @@ class Nav extends Component {
             await fetch("/api/auth/logout");
             window.location.reload();
         }
+        const showAddFriend = () => {
+            document.getElementById("form-add-friend").style.display = "block";
+            document.getElementById("container-add-friend").style.display = "block";
+        }
+        
         if(this.props.loggedIn === "true"){
             return(
-                <div>   
+                <div> 
                     <img className="logo" src="logo.png" alt="logo" />
                     <ul className="nav-ul">
                         <li><h1 onClick={logout}>logout</h1></li>
+                        <li><h1 onClick={showAddFriend}>Add Friend</h1></li>
+                        <li><h1 onClick={showAddFriend}>Add Server</h1></li>
+                        <li><img src="notification-bell-default.png" alt="notification bell" onClick={showContainerNotifications} /></li>
                     </ul>
                 </div>
             )

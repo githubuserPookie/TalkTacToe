@@ -18,8 +18,12 @@ io.on("connection", socket => {
         console.log("client disconected")
     });
     socket.on("join", (roomName) => {
-        socket.join
+        socket.join(roomName);
+        socket.on("send-msg", (msg, sender) => {
+            io.to(roomName).emit("msg", msg, sender);
+        })
     })
+    
 })
 
 //import the modules for routing the users request
