@@ -18,7 +18,10 @@ const userSchema = new Schema({
     requests: {
         type: Array,
     },
-    invites: {
+    invitesPrivate: {
+        type: Array
+    },
+    invitesGroup: {
         type: Array
     },
     groupChats: {

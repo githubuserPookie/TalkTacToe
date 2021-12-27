@@ -30,6 +30,7 @@ io.on("connection", socket => {
 const addFriendRouter = require("../api/routes/addFriendRoute.js");
 const authRouter = require("../api/routes/authRoute.js");
 const chatRouter = require("../api/routes/chatRoute.js")
+const respondInviteRouter = require("../api/routes/respondInviteRoute.js");
 
 //connect to db
 const dbURI = require("./dbURI.js");
@@ -59,6 +60,7 @@ app.use((req, res, next) => {
 app.use("/api/addFriend", addFriendRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/chat", chatRouter);
+app.use("/api/respondInvite", respondInviteRouter);
 app.use(cors());
 app.use(
     cors({

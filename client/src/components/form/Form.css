@@ -1,0 +1,29 @@
+.form {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    word-break: break-all;
+    overflow-x: hidden;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1;
+    border: solid;
+}
+.form label {
+    padding-top: 50px;
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    color: black;
+}
+.exit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: 40px;
+}

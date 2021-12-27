@@ -10,17 +10,16 @@ const checkLogin = (req, res) => {
                     res.json({loggedIn: "false"});
                 }
                 else {
-                   res.json({
+                    console.log(data[0].invitesPrivate)
+                    res.json({
                        loggedIn: "true", 
                        username: req.session.username, 
-                       invites: data[0].invites, 
-                       friends: data[0].friends,
+                       invitesPrivate: data[0].invitesPrivate,
+                       invitesGroup: data[0].invitesGroup,
                        groupChats: data[0].groupChats
                     }); 
                 }
-                
-            })
-            
+            }) 
         }  
         else{
             res.json({loggedIn: "false"});

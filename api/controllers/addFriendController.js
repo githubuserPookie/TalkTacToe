@@ -11,7 +11,7 @@ const addFriend = async(req, res) => {
             username: req.body.friendName
         }, {
             $push: {
-                invites: [[username, "friend"]]
+                invitesPrivate: [req.session.username]
             }
         }
         );

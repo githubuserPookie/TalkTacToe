@@ -1,0 +1,20 @@
+.input[type='search'] {
+    margin: 25px 30px;
+    font-size: 50px;
+    width: 30vw;
+    min-width: 300px;
+    border: solid 1px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.input[type='submit'] {
+    font-size: 50px;
+    margin: auto auto;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 30px;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
