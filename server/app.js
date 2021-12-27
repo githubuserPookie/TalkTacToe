@@ -27,10 +27,10 @@ io.on("connection", socket => {
 })
 
 //import the modules for routing the users request
-const addFriendRouter = require("./api/routes/addFriendRoute.js.js");
-const authRouter = require("./api/routes/authRoute.js.js");
-const chatRouter = require("./api/routes/chatRoute.js")
-const respondInviteRouter = require("./api/routes/respondInviteRoute.js");
+const addFriendRouter = require("../api/routes/addFriendRoute.js");
+const authRouter = require("../api/routes/authRoute.js");
+const chatRouter = require("../api/routes/chatRoute.js")
+const respondInviteRouter = require("../api/routes/respondInviteRoute.js");
 
 //connect to db
 const dbURI = require("./dbURI.js");
