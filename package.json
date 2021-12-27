@@ -4,7 +4,8 @@
   "description": "Message &amp; Video Call",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server/app"
+    "dev": "nodemon server/app",
+    "start": "node server/app.js"
   },
   "repository": {
     "type": "git",
