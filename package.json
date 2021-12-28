@@ -4,8 +4,10 @@
   "description": "Message &amp; Video Call",
   "main": "index.js",
   "scripts": {
+    "start": "node server/app",
     "dev": "nodemon server/app"
   },
+  "engines": {"node": "16.11.1"},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/githubuserPookie/TalkTacToe.git"
